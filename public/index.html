@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>FinAI Dashboard</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Remix Icons -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+  >
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="logo-section">
+
+        <div class="logo-icon">
+          <i class="ri-line-chart-line"></i>
+        </div>
+
+        <div>
+          <h1>FinAI</h1>
+          <p>Smart Finance Manager</p>
+        </div>
+
+      </div>
+
+      <nav class="nav-links">
+
+        <a
+          href="index.html"
+          class="nav-item active"
+        >
+          <i class="ri-home-5-line"></i>
+          <span>Home</span>
+        </a>
+
+        <a
+          href="statistics.html"
+          class="nav-item"
+        >
+          <i class="ri-pie-chart-line"></i>
+          <span>Statistics</span>
+        </a>
+
+        <a
+          href="budget.html"
+          class="nav-item"
+        >
+          <i class="ri-wallet-3-line"></i>
+          <span>Budget</span>
+        </a>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="ai-card">
+
+          <h3>
+            <i class="ri-sparkling-2-line"></i>
+            AI Insights
+          </h3>
+
+          <p>
+            Smart financial analysis powered by AI.
+          </p>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+
+      <header class="topbar">
+
+        <div>
+
+          <h2 class="page-title">
+            Dashboard
+          </h2>
+
+          <p class="page-subtitle">
+            Track your financial activity
+          </p>
+
+        </div>
+
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+        >
+          <i class="ri-moon-line"></i>
+        </button>
+
+      </header>
+
+      <!-- BALANCE CARD -->
+
+      <section class="balance-card">
+
+        <div>
+
+          <p class="balance-label">
+            Current Balance
+          </p>
+
+          <h1 id="balanceAmount">
+            ₹0
+          </h1>
+
+          
+
+        </div>
+
+        <div class="balance-icon">
+          <i class="ri-wallet-3-line"></i>
+        </div>
+
+      </section>
+
+      <!-- OVERVIEW CARDS -->
+
+      <section class="overview-grid">
+
+        <div class="overview-card">
+
+          <div class="overview-icon income">
+            <i class="ri-arrow-right-up-line"></i>
+          </div>
+
+          <div>
+
+            <p>Total Income</p>
+
+            <h2 id="incomeAmount">
+              ₹0
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div class="overview-card">
+
+          <div class="overview-icon expense">
+            <i class="ri-arrow-right-down-line"></i>
+          </div>
+
+          <div>
+
+            <p>Total Expenses</p>
+
+            <h2 id="expenseAmount">
+              ₹0
+            </h2>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ADD TRANSACTION -->
+
+      <section class="transaction-section">
+
+        <h3>
+          Add Transaction
+        </h3>
+
+        <!-- AI TRANSACTION INPUT -->
+
+<section class="ai-input-section">
+
+  <div class="ai-input-box">
+
+    <i class="ri-robot-2-line"></i>
+
+    <input
+      type="text"
+      id="aiTransactionInput"
+      placeholder="Example: Spent 450 on pizza today"
+    >
+
+    <button id="aiSendBtn">
+
+      Add
+
+    </button>
+
+  </div>
+
+</section>
+
+      </section>
+
+      
+      <!-- RECENT TRANSACTIONS -->
+
+      <section class="transactions-section">
+
+        <div class="section-header">
+
+          <h3>
+            Recent Transactions
+          </h3>
+
+        </div>
+
+        <div
+          id="transactionList"
+          class="transaction-list"
+        >
+
+          <!-- Dynamic Transactions -->
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- JS -->
+
+  
+<!-- BUDGET MODAL -->
+
+<div class="budget-modal" id="budgetModal">
+
+  <div class="budget-modal-content">
+
+    <div class="budget-modal-header">
+
+      <h2>
+        Update Monthly Budget
+      </h2>
+
+      <button id="closeBudgetModal">
+
+        <i class="ri-close-line"></i>
+
+      </button>
+
+    </div>
+
+    <div class="budget-modal-body">
+
+      <label>
+        Monthly Budget Amount
+      </label>
+
+      <div class="budget-input-wrapper">
+
+        <span>₹</span>
+
+        <input
+          type="number"
+          id="budgetInput"
+          placeholder="50000"
+          max="99999999"
+        >
+
+      </div>
+
+      <button id="saveBudgetBtn">
+
+        Save Budget
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="js/script.js"></script>
+</body>
+
+</html>

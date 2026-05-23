@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rounded square background with glow -->
+  <rect x="10" y="10" width="180" height="180" rx="45" fill="#16a34a" filter="url(#glow)"/>
+  
+  <!-- Inner bright green shine -->
+  <rect x="10" y="10" width="180" height="180" rx="45" fill="#22c55e" opacity="0.7"/>
+  
+  <!-- Chart icon - upward trending line -->
+  <g>
+    <!-- Vertical bars for chart context -->
+    <rect x="50" y="120" width="15" height="35" rx="3" fill="#ffffff" opacity="0.6"/>
+    <rect x="80" y="95" width="15" height="60" rx="3" fill="#ffffff" opacity="0.6"/>
+    <rect x="110" y="70" width="15" height="85" rx="3" fill="#ffffff" opacity="0.6"/>
+    <rect x="140" y="50" width="15" height="105" rx="3" fill="#ffffff" opacity="0.6"/>
+    
+    <!-- Upward trending line with glow -->
+    <polyline points="57,115 87,95 117,65 147,45" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    
+    <!-- Endpoint circle with glow -->
+    <circle cx="147" cy="45" r="7" fill="#ffffff" filter="url(#glow)"/>
+  </g>
+</svg>

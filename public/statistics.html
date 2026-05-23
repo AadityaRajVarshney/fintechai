@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>FinAI | Statistics</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href=
+"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- Remix Icons -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+  />
+
+  <!-- Main CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  />
+
+  <!-- Chart.js -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js">
+  </script>
+
+  <!-- Main JS -->
+
+  <script
+    defer
+    src="js/script.js">
+  </script>
+
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="logo-section">
+
+        <div class="logo-icon">
+          <i class="ri-line-chart-line"></i>
+        </div>
+
+        <div>
+          <h1>FinAI</h1>
+          <p>Smart Finance Manager</p>
+        </div>
+
+      </div>
+
+      <nav class="nav-links">
+
+        <a
+          href="index.html"
+          class="nav-item"
+        >
+          <i class="ri-home-5-line"></i>
+          <span>Home</span>
+        </a>
+
+        <a
+          href="statistics.html"
+          class="nav-item active"
+        >
+          <i class="ri-pie-chart-line"></i>
+          <span>Statistics</span>
+        </a>
+
+        <a
+          href="budget.html"
+          class="nav-item"
+        >
+          <i class="ri-wallet-3-line"></i>
+          <span>Budget</span>
+        </a>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="ai-card">
+
+          <h3>
+            <i class="ri-sparkling-2-line"></i>
+            AI Insights
+          </h3>
+
+          <p>
+            Your spending trends are analyzed using AI.
+          </p>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+
+      <header class="topbar">
+
+        <div>
+
+          <h2 class="page-title">
+            Financial Statistics
+          </h2>
+
+          <p class="page-subtitle">
+            Visualize your financial activity
+          </p>
+
+        </div>
+
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+        >
+          <i class="ri-moon-line"></i>
+        </button>
+
+      </header>
+
+      <!-- OVERVIEW CARDS -->
+
+      <section class="overview-grid">
+
+        <!-- Income -->
+
+        <div class="overview-card">
+
+          <div class="overview-icon income">
+            <i class="ri-arrow-right-up-line"></i>
+          </div>
+
+          <div>
+
+            <p>Total Income</p>
+
+            <h2 id="incomeAmount">
+  ₹0
+</h2>
+
+          </div>
+
+        </div>
+
+        <!-- Expenses -->
+
+        <div class="overview-card">
+
+          <div class="overview-icon expense">
+            <i class="ri-arrow-right-down-line"></i>
+          </div>
+
+          <div>
+
+            <p>Total Expenses</p>
+
+            <h2 id="expenseAmount">
+  ₹0
+</h2>
+
+          </div>
+
+        </div>
+
+        <!-- Savings -->
+
+        <div class="overview-card">
+
+          <div class="overview-icon savings">
+            <i class="ri-safe-2-line"></i>
+          </div>
+
+          <div>
+
+            <p>Total Savings</p>
+
+            <h2 id="savingsAmount">
+  ₹0
+</h2>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CHARTS SECTION -->
+
+      <section class="charts-grid">
+
+        <!-- Doughnut Chart -->
+
+        <div class="chart-card">
+
+          <div class="card-header">
+
+            <h3>
+              Expense Distribution
+            </h3>
+
+            <i class="ri-pie-chart-2-line"></i>
+
+          </div>
+
+          <canvas
+            id="expenseChart">
+          </canvas>
+
+        </div>
+
+        <!-- Line Chart -->
+
+        <div class="chart-card">
+
+  <div class="section-header">
+
+    <h3>
+      Monthly Trends
+    </h3>
+
+  </div>
+
+  <div style="height: 350px;">
+
+    <canvas id="monthlyChart"></canvas>
+
+  </div>
+
+</div>
+    </main>
+
+  </div>
+
+</body>
+
+</html>
