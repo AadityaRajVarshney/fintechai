@@ -1,0 +1,19 @@
+[package]
+name = "aadityarajvarshney/fintechai"
+version = "0.1.0"
+description = "FintechAI full stack Express and SQLite app"
+readme = "README.md"
+
+[dependencies]
+"wasmer/node" = "*"
+
+[fs]
+"/app" = "."
+
+[[command]]
+name = "start"
+module = "wasmer/node:node"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["/app/server/server.js"]
