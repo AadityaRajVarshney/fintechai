@@ -15,4 +15,4 @@ module = "wasmer/node:node"
 runner = "wasi"
 
 [command.annotations.wasi]
-main-args = ["/app/server/server.js"]
+main-args = ["/server/server.js"]
