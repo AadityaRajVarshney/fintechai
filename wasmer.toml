@@ -1,8 +1,7 @@
 [package]
 name = "aadityarajvarshney/fintechai"
-version = "0.1.0"
-description = "FintechAI full stack Express and SQLite app"
-readme = "README.md"
+version = "1.0.0"
+description = "FintechAI full stack Express and SQLite application"
 
 [dependencies]
 "wasmer/node" = "*"
