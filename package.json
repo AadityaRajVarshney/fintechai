@@ -1,11 +1,12 @@
 {
   "name": "fintechai",
   "version": "1.0.0",
-  "description": "FintechAI full stack Express and SQLite application",
+  "description": "FintechAI full stack Express and SQLite app",
   "main": "server/server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "build": "echo \"No build step required\""
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",
@@ -15,5 +16,6 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "private": false
 }
