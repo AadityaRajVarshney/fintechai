@@ -1,0 +1,25 @@
+{
+  "name": "aadityarajvarshney/fintechai",
+  "description": "FintechAI full stack Express and SQLite application",
+  "version": "1.0.0",
+  "namespace": "aadityarajvarshney",
+  "package": "aadityarajvarshney/fintechai@1.0.0",
+  "dependencies": {
+    "wasmer/node": "*"
+  },
+  "fs": {
+    "/app": "."
+  },
+  "commands": [
+    {
+      "name": "start",
+      "module": "wasmer/node:node",
+      "runner": "wasi",
+      "annotations": {
+        "wasi": {
+          "main-args": ["/app/server.js"]
+        }
+      }
+    }
+  ]
+}
